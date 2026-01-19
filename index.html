@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmo Glam Fairy | Luxury Spa & Beauty</title>
     <!-- Browser Tab Icon -->
-    <link rel="icon" href="Untitled-2.png">
+    <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -270,10 +270,79 @@
             margin-bottom: 15px;
         }
         
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--light);
+        }
+        
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-category {
+            margin-bottom: 50px;
+        }
+        
+        .pricing-category h3 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .pricing-category h3:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .pricing-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
         .service-price {
             color: var(--accent);
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Special pricing cards */
+        .pricing-special {
+            background-color: var(--primary);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .pricing-special .service-name {
+            color: var(--dark);
         }
         
         /* About */
@@ -523,6 +592,10 @@
             .container {
                 padding: 0 20px; /* Ensure container has padding on mobile */
             }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -589,6 +662,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#book" class="btn">Book Now</a></li>
@@ -602,7 +676,7 @@
             <h1>Cosmo Glam Fairy Spa</h1>
             <p>Experience the ultimate relaxation and beauty transformation at our luxurious spa in Parow Valley. Let our expert therapists pamper you with our premium treatments.</p>
             <a href="#services" class="btn">Explore Services</a>
-            <a href="#contact" class="btn btn-light">Contact Us</a>
+            <a href="#pricing" class="btn btn-light">View Pricing</a>
         </div>
     </section>
 
@@ -615,77 +689,219 @@
             </div>
             
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Facial Services -->
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Facial Treatment">
                     </div>
                     <div class="service-content">
-                        <h3>Luxury Facial</h3>
-                        <p>Revitalize your skin with our premium facial treatment using organic products tailored to your skin type.</p>
-                        <div class="service-price">From R350</div>
+                        <h3>Facial Treatments</h3>
+                        <p>Revitalize your skin with our premium facial treatments using organic products tailored to your skin type.</p>
                     </div>
                 </div>
                 
-                <!-- Service 2 -->
+                <!-- Massage Services -->
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Massage Therapy">
                     </div>
                     <div class="service-content">
-                        <h3>Full Body Massage</h3>
+                        <h3>Massage Therapy</h3>
                         <p>Relieve tension and stress with our therapeutic massage techniques performed by certified therapists.</p>
-                        <div class="service-price">From R450</div>
                     </div>
                 </div>
                 
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hair Styling">
-                    </div>
-                    <div class="service-content">
-                        <h3>Hair Styling & Treatment</h3>
-                        <p>Transform your look with our professional hair styling, cutting, and nourishing treatments.</p>
-                        <div class="service-price">From R280</div>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
+                <!-- Nail Services -->
                 <div class="service-card">
                     <div class="service-img">
                         <img src="pedicure.jpg" alt="Manicure & Pedicure">
                     </div>
                     <div class="service-content">
-                        <h3>Manicure & Pedicure</h3>
+                        <h3>Nail Services</h3>
                         <p>Pamper your hands and feet with our luxurious manicure and pedicure services using premium products.</p>
-                        <div class="service-price">From R250</div>
                     </div>
                 </div>
                 
-                <!-- Service 5 -->
+                <!-- Waxing Services -->
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Waxing">
+                        <img src="waxing.jpg" alt="Waxing">
                     </div>
                     <div class="service-content">
-                        <h3>Professional Waxing</h3>
+                        <h3>Waxing Services</h3>
                         <p>Get smooth, hair-free skin with our professional waxing services for all areas of the body.</p>
-                        <div class="service-price">From R180</div>
                     </div>
                 </div>
                 
-                <!-- Service 6 -->
+                <!-- Lash & Brow Services -->
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="untitled6fe3636.webp" alt="Bridal Package">
+                        <img src="lash.jpg" alt="Lash Extensions">
                     </div>
                     <div class="service-content">
-                        <h3>Bridal Package</h3>
-                        <p>Our exclusive bridal package includes makeup, hair, nails, and pre-wedding treatments for your special day.</p>
-                        <div class="service-price">From R1200</div>
+                        <h3>Lash & Brow Services</h3>
+                        <p>Enhance your eyes with our professional lash extensions, brow waxing, and tinting services.</p>
                     </div>
                 </div>
+                
+                <!-- Party Packages -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="pamper.jpg" alt="Pamper Party">
+                    </div>
+                    <div class="service-content">
+                        <h3>Pamper Parties</h3>
+                        <p>Celebrate special occasions with our exclusive pamper party packages for kids and adults.</p>
+                    </div>
+                </div>
+                
+                <!-- Special Treatments -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Henna Art">
+                    </div>
+                    <div class="service-content">
+                        <h3>Special Treatments</h3>
+                        <p>Unique beauty treatments including traditional henna hand art and other specialized services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container pricing-container">
+            <div class="section-title">
+                <h2>Service Pricing</h2>
+                <p>Transparent pricing for all our premium beauty and wellness treatments.</p>
+            </div>
+            
+            <!-- Facial Treatments Pricing -->
+            <div class="pricing-category">
+                <h3>Facial Treatments</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="service-name">Classic Facial</div>
+                        <div class="service-price">R 300</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Signature Facial</div>
+                        <div class="service-price">R 400</div>
+                    </div>
+                    <div class="pricing-item pricing-special">
+                        <div class="service-name">Signature Facial with Brow Wax & Tint</div>
+                        <div class="service-price">R 500</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Waxing Services Pricing -->
+            <div class="pricing-category">
+                <h3>Waxing Services</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="service-name">Lip Wax</div>
+                        <div class="service-price">R 80</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Chin Wax</div>
+                        <div class="service-price">R 60</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Under Arm Wax</div>
+                        <div class="service-price">R 80</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Half Leg Wax</div>
+                        <div class="service-price">R 100</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Full Leg Wax</div>
+                        <div class="service-price">R 120</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Brow Wax</div>
+                        <div class="service-price">R 100</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nail Services Pricing -->
+            <div class="pricing-category">
+                <h3>Nail Services</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="service-name">Manicure</div>
+                        <div class="service-price">R 150</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Signature Pedicure</div>
+                        <div class="service-price">R 280</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Gel Polish</div>
+                        <div class="service-price">R 100</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Treatments Pricing -->
+            <div class="pricing-category">
+                <h3>Special Treatments</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="service-name">Classic Lash Extensions</div>
+                        <div class="service-price">R 250</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Eyebrow Tint</div>
+                        <div class="service-price">R 100</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Henna Hand Art</div>
+                        <div class="service-price">R 80</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="service-name">Swedish Massage</div>
+                        <div class="service-price">R 400</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pamper Parties Pricing -->
+            <div class="pricing-category">
+                <h3>Pamper Parties</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item pricing-special">
+                        <div class="service-name">Kids Party (2 hours - Henna Hands)</div>
+                        <div class="service-price">R 500</div>
+                    </div>
+                    <div class="pricing-item pricing-special">
+                        <div class="service-name">Kids Party (2.5 hours - Facials, Mini Pedicures & Crafts) - 6+ girls</div>
+                        <div class="service-price">R 1500</div>
+                    </div>
+                    <div class="pricing-item pricing-special">
+                        <div class="service-name">Adult Birthday Party (2 hours)</div>
+                        <div class="service-price">R 1500</div>
+                    </div>
+                    <div class="pricing-item pricing-special">
+                        <div class="service-name">Adult Birthday Party (3 hours)</div>
+                        <div class="service-price">R 2000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Establishment -->
+            <div class="pricing-category" style="margin-top: 60px; text-align: center; background-color: var(--primary); padding: 30px; border-radius: 10px;">
+                <h3 style="color: var(--dark); border-bottom: none; text-align: center;">About Our Spa</h3>
+                <p style="font-size: 1.2rem; color: var(--dark); margin-bottom: 15px;">
+                    <i class="fas fa-calendar-alt" style="color: var(--accent); margin-right: 10px;"></i>
+                    <strong>Cosmo Glam Fairy was established on 1 August 2014</strong>
+                </p>
+                <p style="color: var(--dark); font-size: 1.1rem;">
+                    For nearly a decade, we've been providing exceptional beauty and wellness services to the Parow Valley community.
+                </p>
             </div>
         </div>
     </section>
@@ -704,8 +920,8 @@
                 </div>
                 <div class="about-text">
                     <h3>Welcome to Cosmo Glam Fairy</h3>
-                    <p>Located in the heart of Parow Valley, Cape Town, Cosmo Glam Fairy Spa is dedicated to providing premium beauty and wellness services in a serene and luxurious environment.</p>
-                    <p>Our team of certified therapists and beauticians are passionate about helping you look and feel your best. We use only high-quality products and the latest techniques to ensure exceptional results.</p>
+                    <p>Located in the heart of Parow Valley, Cape Town, Cosmo Glam Fairy Spa has been providing premium beauty and wellness services since <strong>1 August 2014</strong>. We are dedicated to creating a serene and luxurious environment for all our clients.</p>
+                    <p>Our team of certified therapists and beauticians are passionate about helping you look and feel your best. We use only high-quality products and the latest techniques to ensure exceptional results for every treatment.</p>
                     
                     <div class="features">
                         <div class="feature">
@@ -760,7 +976,17 @@
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p>+27 21 123 4567</p>
+                            <p>+27 67 709 0274</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>Firdows786cosmo@gmail.com</p>
                         </div>
                     </div>
                     
@@ -783,7 +1009,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="https://wa.me/27677090274?text=Hello%20Cosmo%20Glam%20Fairy!%20I%20would%20like%20to%20book%20an%20appointment." class="social-icon">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -806,12 +1032,13 @@
                         <div style="margin-bottom: 15px;">
                             <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;">
                                 <option value="">Select Service</option>
-                                <option value="facial">Luxury Facial</option>
-                                <option value="massage">Full Body Massage</option>
-                                <option value="hair">Hair Styling & Treatment</option>
-                                <option value="nails">Manicure & Pedicure</option>
-                                <option value="waxing">Professional Waxing</option>
-                                <option value="bridal">Bridal Package</option>
+                                <option value="facial">Facial Treatment</option>
+                                <option value="massage">Swedish Massage</option>
+                                <option value="nails">Nail Services</option>
+                                <option value="waxing">Waxing Services</option>
+                                <option value="lashes">Lash Extensions</option>
+                                <option value="party">Pamper Party</option>
+                                <option value="other">Other Treatment</option>
                             </select>
                         </div>
                         <div style="margin-bottom: 20px;">
@@ -830,7 +1057,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">Cosmo <span>Glam Fairy</span></div>
-                    <p>Your premier destination for beauty and wellness in Parow Valley, Cape Town. We provide exceptional services in a relaxing and luxurious environment.</p>
+                    <p>Your premier destination for beauty and wellness in Parow Valley, Cape Town. Established in 2014, we provide exceptional services in a relaxing and luxurious environment.</p>
                 </div>
                 
                 <div class="footer-links">
@@ -838,6 +1065,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -852,7 +1080,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Cosmo Glam Fairy Spa. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i></p>
+                <p>&copy; 2014-2026 Cosmo Glam Fairy Spa. All rights reserved. | Established 1 August 2014 | Designed By CreativeHive Email : creative.hiv3@gmail.com <i class="fas fa-heart" style="color: var(--primary);"></i></p>
             </div>
         </div>
     </footer>
@@ -904,4 +1132,3 @@
     </script>
 </body>
 </html>
-
